@@ -6,12 +6,49 @@ body {
   margin: 0;
   padding: 0;
   font-family: "PT Sans", sans-serif;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-image: url("/img/hero.jpeg");
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-blend-mode: darken;
+  font-family: "Shadows Into Light Two", cursive;
+}
+header .title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 64px;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 16px 32px;
+}
+header .title h1 {
+  font-weight: 500;
+  font-size: 72px;
+  margin: 0;
+}
+header .title span {
+  font-size: 26px;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: lowercase;
+  font-weight: 600;
 }
 
 #projects {
   display: flex;
   flex-wrap: wrap;
-  width: 100vw;
+  width: 100%;
 }
 #projects .project {
   display: flex;
@@ -125,6 +162,11 @@ body {
 }
 #projects .project:hover::after {
   border: 16px solid rgba(255, 255, 255, 0.2);
+}
+
+#contact {
+  width: 100%;
+  height: 100vh;
 }
 
 /*# sourceMappingURL=index.css.map */
