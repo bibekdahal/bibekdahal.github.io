@@ -1,5 +1,8 @@
+
 $font-normal: 'PT Sans', sans-serif;
-$font-cursive: 'Shadows Into Light Two', cursive;
+// $font-title: 'Shadows Into Light Two', cursive;
+$font-title: 'Indie Flower', cursive;
+// $font-title: $font-normal;
 
 *, *::after, *::before {
     box-sizing: border-box;
@@ -26,20 +29,23 @@ header {
     color: #fff;
     background-color: rgba(0, 0, 0, 0.3);
     background-blend-mode: darken;
-    font-family: $font-cursive;
 
     .title {
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: flex-end;
-        margin: 64px;
-        background-color: rgba(0, 0, 0, 0.1);
+        margin: 128px;
+        background-color: rgba(0, 0, 0, 0.4);
+        height: 100%;
         padding: 16px 32px;
 
         h1 {
             font-weight: 500;
             font-size: 72px;
             margin: 0;
+            font-family: $font-title;
+            line-height: 1;
         }
 
         span {
