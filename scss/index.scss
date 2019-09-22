@@ -13,7 +13,6 @@ body {
     padding: 0;
     font-family: $font-normal;;
     width: 100vw;
-    height: 100vh;
     overflow-x: hidden;
 }
 
@@ -147,14 +146,14 @@ header {
             padding: 0;
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
-            background-color: rgba(255, 255, 255, 0.2);
+            justify-content: center;
             z-index: 1;
 
             li {
                 text-transform: uppercase;
                 font-size: 12px;
                 color: #fff;
+                background-color: rgba(255, 255, 255, 0.2);
                 padding: 4px 8px;
                 font-weight: 700;
             }
@@ -207,7 +206,6 @@ header {
 
         &:hover {
             img {
-                
                 opacity: 0.3;
             }
 
@@ -274,6 +272,110 @@ header {
             &:hover {
                 span {
                     color: rgba(255, 255, 255, 1);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    #projects {
+        .project {
+            h3 {
+                font-size: 24px;
+                margin-top: 48px;
+            }
+
+            ul {
+                li {
+                    padding: 2px 4px;
+                }
+            }
+
+            p {
+                &.summary {
+                    font-size: 14px;
+                }
+
+                &.extra {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        justify-content: flex-start;
+        background-image: url('/img/hero-potrait.jpeg');
+
+        .title {
+            margin: 0;
+            width: 100%;
+        }
+
+        a {
+            bottom: 64px;
+        }
+    }
+
+    #projects {
+        flex-direction: column;
+        flex-wrap: unset;
+
+        .project {
+            height: auto;
+            padding: 32px;
+
+            h3 {
+                font-size: 24px;
+                margin-top: 0;
+            }
+
+            ul {
+                li {
+                    padding: 2px 4px;
+                }
+            }
+
+            .icons {
+                opacity: 1;
+            }
+
+            p {
+                opacity: 1;
+
+                &.summary {
+                    font-size: 14px;
+                }
+
+                &.extra {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    #contact {
+        height: auto;
+        padding: 32px 0;
+
+        .left {
+            display: none;
+        }
+
+        .right {
+            flex-basis: 100%;
+            padding: 0 32px;
+
+            a {
+                i {
+                    font-size: 24px;
+                }
+
+                span {
+                    font-size: 18px;
                 }
             }
         }
