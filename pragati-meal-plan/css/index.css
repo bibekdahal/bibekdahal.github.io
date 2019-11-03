@@ -50,4 +50,18 @@ main section ul li {
   margin: 10px 0;
 }
 
+@media screen and (max-width: 768px) {
+  main section {
+    flex-basis: 100%;
+    height: auto;
+    padding: 16px 32px;
+  }
+  main section h2 {
+    font-size: 18px;
+  }
+  main section ul {
+    font-size: 14px;
+  }
+}
+
 /*# sourceMappingURL=index.css.map */
