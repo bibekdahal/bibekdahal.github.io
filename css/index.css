@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *, *::after, *::before {
   box-sizing: border-box;
 }
@@ -38,7 +39,7 @@ header .title h1 {
   font-weight: 500;
   font-size: 72px;
   margin: 0;
-  font-family: "Indie Flower", cursive;
+  font-family: "Shadows Into Light Two", cursive;
   line-height: 1;
 }
 header .title span {
@@ -144,11 +145,6 @@ header .title a:hover::after {
   color: #e74c3c;
   text-align: center;
 }
-#projects > p {
-  flex-basis: 100%;
-  text-align: center;
-  color: rgba(0, 0, 0, 0.6);
-}
 #projects .list {
   padding: 0 8px;
   flex-basis: 40%;
@@ -220,6 +216,16 @@ header .title a:hover::after {
 }
 #projects .details ul {
   margin: 0;
+}
+#projects .details a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  border-bottom: 1px solid #000;
+}
+#projects .details a::before {
+  content: "🌎";
+  padding: 0 4px 0 0;
 }
 #projects .details p {
   transition: all 0.4s ease-in-out;

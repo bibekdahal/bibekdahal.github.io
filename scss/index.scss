@@ -1,7 +1,7 @@
 
 $font-normal: 'PT Sans', sans-serif;
-// $font-title: 'Shadows Into Light Two', cursive;
-$font-title: 'Indie Flower', cursive;
+$font-title: 'Shadows Into Light Two', cursive;
+// $font-title: 'Indie Flower', cursive;
 // $font-title: $font-normal;
 
 $color-primary: #e74c3c;
@@ -173,11 +173,11 @@ header {
     text-align: center;
   }
 
-  > p {
-    flex-basis: 100%;
-    text-align: center;
-    color: rgba(0, 0, 0, 0.6);
-  }
+  // > p {
+  //   flex-basis: 100%;
+  //   text-align: center;
+  //   color: rgba(0, 0, 0, 0.6);
+  // }
 
   .list {
     padding: 0 8px;
@@ -263,6 +263,18 @@ header {
 
     ul {
       margin: 0;
+    }
+
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #000;
+      border-bottom: 1px solid #000;
+
+      &::before {
+        content: '🌎';
+        padding: 0 4px 0 0;
+      }
     }
 
     p {
