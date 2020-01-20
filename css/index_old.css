@@ -9,118 +9,140 @@ body {
   font-family: "PT Sans", sans-serif;
   width: 100vw;
   overflow-x: hidden;
-  background-color: #000;
-  color: #fff;
 }
 
 header {
-  position: relative;
-  height: 100vh;
-  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-image: url("/img/hero.jpeg");
+  background-size: cover;
+  background-attachment: fixed;
+  color: #e74c3c;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-blend-mode: darken;
 }
 header .title {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
+  margin: 128px;
+  background-color: rgba(255, 255, 255, 0.4);
+  height: 100%;
+  padding: 16px 32px;
 }
 header .title h1 {
-  font-family: "Shadows Into Light Two", cursive;
   font-weight: 500;
-  font-size: 80px;
+  font-size: 72px;
   margin: 0;
-  padding: 0;
-  text-align: center;
+  font-family: "Shadows Into Light Two", cursive;
+  line-height: 1;
 }
 header .title span {
-  text-align: center;
-  font-size: 24px;
-  font-family: "Shadows Into Light Two", cursive;
-  color: #00B0FF;
+  font-size: 26px;
+  color: rgba(0, 0, 0, 0.5);
+  text-transform: lowercase;
+  font-weight: 600;
 }
 header .title a {
   position: absolute;
   text-decoration: none;
-  color: #fff;
+  color: rgba(0, 0, 0, 0.7);
   text-transform: uppercase;
-  border-bottom: 1px solid #FF3D00;
-  bottom: 64px;
-  right: 64px;
-  font-size: 24px;
-  color: #FF3D00;
+  font-size: 18px;
+  font-weight: 600;
+  bottom: 48px;
+  right: 32px;
+}
+header .title a::after {
+  position: absolute;
+  content: " ";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 2px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.7);
+  transform: scaleX(0);
+  transition: transform 0.4s ease-in-out;
+}
+header .title a:hover::after {
+  transform: scaleX(1);
 }
 
 #personal-info {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: rgba(255, 255, 255, 0.15);
-}
-#personal-info > div {
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 512px;
+  padding: 72px 128px;
+  background-color: rgba(0, 0, 0, 0);
 }
-#personal-info > div p {
-  margin: 8px 0;
-  font-size: 18px;
+#personal-info p {
   text-align: center;
+  max-width: 600px;
+  margin: 4px 0;
 }
-#personal-info > div p b {
-  color: #FF3D00;
+#personal-info p b {
+  font-weight: 600;
+  font-size: 14px;
 }
 
 #skills {
-  min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
-  padding: 32px 128px;
-  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0 72px 96px;
+  background-color: rgba(0, 0, 0, 0);
 }
 #skills h2 {
   flex-basis: 100%;
-  margin: 0;
-  padding: 0;
-  text-transform: uppercase;
+  margin: 32px 16px 0;
   font-weight: 500;
-  color: #FF3D00;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: #e74c3c;
   text-align: center;
 }
 #skills .skillset {
   flex-basis: calc(100% / 3);
+  margin: 0;
+  padding: 0 16px;
 }
 #skills .skillset h3 {
-  color: #00B0FF;
+  color: #3498db;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 18px;
+  padding: 32px 0 0 0;
 }
 #skills .skillset ul {
-  display: flex;
-  flex-wrap: wrap;
   list-style: none;
   padding: 0;
+  display: flex;
+  margin: 4px 0;
+  flex-wrap: wrap;
 }
 #skills .skillset ul li {
-  padding: 0 8px 0 0;
+  padding: 0 8px;
+  font-size: 18px;
 }
 
 #projects {
   display: flex;
   flex-wrap: wrap;
-  padding: 32px 72px 32px;
-  background-color: rgba(255, 255, 255, 0.15);
+  padding: 0 72px 32px;
+  background-color: rgba(0, 0, 0, 0);
 }
 #projects h2 {
   flex-basis: 100%;
-  margin: 0 0 32px 0;
-  padding: 0;
-  text-transform: uppercase;
+  margin: 32px 16px 0;
   font-weight: 500;
-  color: #FF3D00;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: #e74c3c;
   text-align: center;
 }
 #projects .list {
@@ -132,17 +154,17 @@ header .title a {
   cursor: pointer;
 }
 #projects .list .project:hover {
-  background-color: rgba(255, 255, 255, 0.06);
+  background-color: rgba(0, 0, 0, 0.06);
 }
 #projects .list .project.active {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(0, 0, 0, 0.08);
 }
 #projects .list .project.active h4 {
-  color: #00B0FF;
+  color: #3498db;
   font-weight: 600;
 }
 #projects .list .project:not(:last-child) {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 #projects .list .project img {
   display: none;
@@ -167,7 +189,7 @@ header .title a {
 #projects .list .project ul li {
   text-transform: uppercase;
   font-size: 12px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
   padding: 4px 8px;
   font-weight: 500;
 }
@@ -182,7 +204,7 @@ header .title a {
 }
 #projects .details .info {
   text-align: center;
-  color: #33c0ff;
+  color: #5faee3;
 }
 #projects .details.active {
   display: flex;
@@ -190,11 +212,20 @@ header .title a {
 #projects .details h3 {
   font-size: 20px;
   font-weight: 600;
-  color: #00B0FF;
-  margin: 0;
+  color: #3498db;
 }
 #projects .details ul {
   margin: 0;
+}
+#projects .details a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  border-bottom: 1px solid #000;
+}
+#projects .details a::before {
+  content: "🌎";
+  padding: 0 4px 0 0;
 }
 #projects .details p {
   transition: all 0.4s ease-in-out;
@@ -209,27 +240,13 @@ header .title a {
 #projects .details p.summary {
   font-size: 16px;
   font-weight: 600;
-  margin-bottom: 32px;
-  color: #99dfff;
-}
-#projects .details p.summary a {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #ccefff;
-  border-bottom: 1px solid #ccefff;
-  padding-bottom: 2px;
-  margin-top: 4px;
-}
-#projects .details p.summary a::before {
-  content: "🌎";
-  padding: 0 4px 0 0;
 }
 #projects .details p.extra {
   margin: 0 0 10px;
   font-size: 14px;
 }
 #projects .details p a {
-  color: #fff;
+  color: #0a0a0a;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 12px;
@@ -240,14 +257,14 @@ header .title a {
   display: flex;
   width: 100%;
   height: 100vh;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #d6dee2;
 }
 #contact .left {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-basis: 50%;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 #contact .left img {
   width: auto;
@@ -271,14 +288,14 @@ header .title a {
 #contact .right a i {
   margin-right: 24px;
   font-size: 40px;
-  color: white;
+  color: black;
 }
 #contact .right a span {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 0.6);
   font-size: 24px;
 }
 #contact .right a:hover span {
-  color: white;
+  color: black;
 }
 
 @media screen and (max-width: 1024px) {
@@ -289,6 +306,7 @@ header .title a {
 @media screen and (max-width: 768px) {
   header {
     justify-content: flex-start;
+    background-image: url("/img/hero-potrait.jpeg");
   }
   header .title {
     margin: 0;
@@ -344,4 +362,4 @@ header .title a {
   }
 }
 
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=index_old.css.map */
