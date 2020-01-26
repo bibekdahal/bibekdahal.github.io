@@ -270,14 +270,12 @@ header {
   #projects {
     padding: 72px 16px; } }
 @media screen and (max-width: 768px) {
-  header {
-    justify-content: flex-start; }
-    header .title {
-      margin: 0;
-      width: 100%; }
-      header .title h1 {
-        font-size: 64px; }
-    header a {
+  header .title {
+    margin: 0;
+    width: 100%; }
+    header .title h1 {
+      font-size: 64px; }
+    header .title a {
       bottom: 64px; }
 
   #personal-info {

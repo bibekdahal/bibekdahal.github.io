@@ -393,20 +393,18 @@ header {
 
 @media screen and (max-width: 768px) {
     header {
-        justify-content: flex-start;
+      .title {
+          margin: 0;
+          width: 100%;
 
-        .title {
-            margin: 0;
-            width: 100%;
+          h1 {
+            font-size: 64px;
+          }
 
-            h1 {
-              font-size: 64px;
-            }
-        }
-
-        a {
+          a {
             bottom: 64px;
-        }
+          }
+      }
     }
 
     #personal-info {
