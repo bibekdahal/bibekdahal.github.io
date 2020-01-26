@@ -1,12 +1,17 @@
 
+$font-alternative: 'Cuprum', sans-serif;
 $font-normal: 'PT Sans', sans-serif;
 $font-title: 'Shadows Into Light Two', cursive;
 
 $color-primary: #FF3D00;
-$color-secondary: #00B0FF;
+$color-secondary: rgba(180, 255, 180, 1);
 
 *, *::after, *::before {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -28,6 +33,15 @@ header {
   justify-content: center;
   align-items: center;
 
+  #the-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
   .title {
     display: flex;
     flex-direction: column;
@@ -35,18 +49,34 @@ header {
     align-items: center;
 
     h1 {
-      font-family: $font-title;
+      font-family: $font-alternative;
       font-weight: 500;
       font-size: 80px;
-      margin: 0;
+      margin: 0 0 20px 0;
       padding: 0;
       text-align: center;
+      cursor: pointer;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: rgba(255, 255, 255, 0.4);
+        transform: scale(0, 1);
+
+        transition: transform 0.3s ease-in;
+      }
+
+      &:hover::after {
+        transform: scale(1, 1);
+      }
     }
 
     span {
       text-align: center;
       font-size: 24px;
-      font-family: $font-title;
+      font-family: $font-alternative;
       color: $color-secondary;
     }
 
@@ -55,12 +85,24 @@ header {
       text-decoration: none;
       color: #fff;
       text-transform: uppercase;
-      border-bottom: 1px solid $color-primary;
+      font-weight: 600;
+      // border-bottom: 1px solid $color-primary;
       bottom: 64px;
       right: 64px;
-      font-size: 24px;
+      font-size: 18px;
       color: $color-primary;
     }
+  }
+
+  .arrow {
+    position: absolute;
+    color: #fff;
+    text-decoration: none;
+    font-size: 56px;
+    bottom: 56px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.8;
   }
 }
 
@@ -68,7 +110,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 50vh;
   background-color: rgba(255, 255, 255, 0.15);
 
   >div {
@@ -92,9 +134,10 @@ header {
 
 
 #skills {
-  min-height: 100vh;
+  min-height: 60vh;
   display: flex;
   flex-wrap: wrap;
+  align-content: space-around;
   padding: 32px 128px;
   background-color: rgba(255, 255, 255, 0.1);
 
@@ -106,6 +149,7 @@ header {
     font-weight: 500;
     color: $color-primary;
     text-align: center;
+    display: none;
   }
 
   .skillset {
@@ -136,12 +180,13 @@ header {
 
   h2 {
     flex-basis: 100%;
-    margin: 0 0 32px 0;
-    padding: 0;
+    margin: 16px 0;
+    padding: 0 24px;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 20px;
     color: $color-primary;
-    text-align: center;
+    // text-align: center;
   }
 
   .list {
@@ -317,18 +362,22 @@ header {
 
             i {
                 margin-right: 24px;
-                font-size: 40px;
+                font-size: 32px;
                 color: rgba(255, 255, 255, 1);
             }
 
             span {
                 color: rgba(255, 255, 255, 0.6);
-                font-size: 24px;
+                font-size: 20px;
             }
 
             &:hover {
                 span {
-                    color: rgba(255, 255, 255, 1);
+                    color: $color-primary;
+                }
+
+                i {
+                  color: $color-primary;
                 }
             }
         }
@@ -349,6 +398,10 @@ header {
         .title {
             margin: 0;
             width: 100%;
+
+            h1 {
+              font-size: 64px;
+            }
         }
 
         a {
@@ -357,14 +410,34 @@ header {
     }
 
     #personal-info {
-      padding: 72px 16px;
+      padding: 72px 32px;
+
+      > div {
+        align-items: flex-start;
+
+        p {
+          font-size: 16px;
+          text-align: justify;
+        }
+      }
     }
 
     #skills {
-      padding: 72px 16px;
+      padding: 72px 32px;
 
       .skillset {
         flex-basis: 100%;
+        margin: 10px 0;
+
+        h3 {
+          font-weight: 500;
+          margin: 0;
+        }
+
+        ul {
+          margin: 4px 0;
+          font-size: 14px;
+        }
       }
     }
 

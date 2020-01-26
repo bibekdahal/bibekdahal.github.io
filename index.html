@@ -8,21 +8,25 @@
         <link rel="shortcut icon" href="/img/hero-3.png" />
 
         <link rel="stylesheet" href="/css/index.css">
-        <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Shadows+Into+Light+Two|PT+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Cuprum|Indie+Flower|Shadows+Into+Light+Two|PT+Sans&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/5f6ad0d967.js"></script>
         <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
     </head>
     <body>
         <header>
-            <div class="title">
-                <h1>
-                    Bibek Dahal
-                </h1>
-                <span>
-                    Software Developer
-                </span>
-                <a target="_blank" href="/files/resume.pdf">Resume</a>
-            </div>
+          <canvas id="the-canvas">
+          </canvas>
+          <div class="title">
+              <h1>
+                  Bibek Dahal
+              </h1>
+              <span>
+                  Software Developer
+              </span>
+              <a target="_blank" href="/files/resume.pdf">Resume</a>
+          </div>
+
+          <a href="#personal-info" class="arrow ion-ios-arrow-down"></a>
         </header>
 
         <section id="personal-info">
@@ -44,15 +48,7 @@
 
         <section id="skills">
           <h2> Here are some technologies I am familiar with: </h2>
-          <div class="skillset">
-            <h3>
-              Data Science and Machine Learning
-            </h3>
 
-            <ul><li>NumPy</li> <li>SciPy</li> <li>Pandas</li> <li>Scikit-learn</li></ul>
-            <ul><li>Dask</li> <li>Zarr</li> <li>Xarray</li></ul>
-
-          </div>
           <div class="skillset">
             <h3>
               Web
@@ -62,6 +58,35 @@
             <ul><li>D3</li> <li>Mapbox</li> <li>Cesium</li> <li>WebGL</li></ul>
 
           </div>
+
+          <div class="skillset">
+            <h3>
+              Graphics, Game and GPU
+            </h3>
+            <ul><li>OpenGL</li> <li>Shader Programming</li> <li>Unity</li></ul>
+            <ul><li>Box2D</li> <li>Bullet Physics</li></ul>
+            <ul><li>Parallel Programming with Compute Shaders</li></ul>
+          </div>
+
+          <div class="skillset">
+            <h3>
+              Data Science and Machine Learning
+            </h3>
+
+            <ul><li>NumPy</li> <li>SciPy</li> <li>Pandas</li> <li>Scikit-learn</li></ul>
+            <ul><li>Dask</li> <li>Zarr</li> <li>Xarray</li></ul>
+
+          </div>
+
+          <div class="skillset">
+            <h3>
+              Infrastructure and Cloud
+            </h3>
+            <ul><li>Docker</li> <li>Serverless</li> <li>Terraform</li></ul>
+            <ul><li>AWS</li> <li>Athena</li> <li>S3</li> <li>Step Functions</li> <li>Lambda</li> <li>Fargate</li> <li>ECS Cluster</li> <li>RDS</li></ul>
+
+          </div>
+
           <div class="skillset">
             <h3>
               Database
@@ -77,26 +102,10 @@
             <ul><li>React Native</li> <li>OpenGL ES</li></ul>
 
           </div>
-          <div class="skillset">
-            <h3>
-              Infrastructure and Cloud
-            </h3>
-            <ul><li>Docker</li> <li>Serverless</li> <li>Terraform</li></ul>
-            <ul><li>AWS</li> <li>Athena</li> <li>S3</li> <li>Step Functions</li> <li>Lambda</li> <li>Fargate</li> <li>ECS Cluster</li> <li>RDS</li></ul>
-
-          </div>
-          <div class="skillset">
-            <h3>
-              Graphics, Game and GPU
-            </h3>
-            <ul><li>OpenGL</li> <li>Shader Programming</li> <li>Unity</li></ul>
-            <ul><li>Box2D</li> <li>Bullet Physics</li></ul>
-            <ul><li>Parallel Programming with Compute Shaders</li></ul>
-          </div>
         </section>
 
         <section id="projects">
-          <h2> And, these are some projects I am proud of: </h2>
+          <h2> Projects </h2>
           <div class="list">
 
               <div class="project" data-id="deep">
@@ -388,6 +397,7 @@
         </section>
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="/js/particles.js"></script>
         <script src="/js/index.js"></script>
     </body>
 </html>
