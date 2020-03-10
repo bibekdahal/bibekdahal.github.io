@@ -1,0 +1,516 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h4> Visualizing Ranges over Time on Mobile Phones: A Task-Based Crowdsourced Evaluation </h4>
+
+					<small style="font-style: italic;">Matthew Brehmer, Bongshin Lee, Petra Isenberg, and Eun Kyoung Choe</small>
+				</section>
+				<section>
+					<h5>Visualizing Ranges over Time</h5>
+					<section>
+						<small>
+							<p class="fragment fade-in"><b> A pair of quantitative values. </b></p>
+							<p class="fragment fade-in"> <span style="font-style: italic;">Low and high temperature of one day.</span></p>
+							<p class="fragment fade-in"> <span style="font-style: italic;">Min and max selling price of a stock in a financial quarter.</span></p>
+						</small>
+					</section>
+
+					<section>
+						<small class="fragment fade-in">
+							<p>Encode as <b>bars</b> or <b>pairs of points</b>.</p>
+							<p>One <b>quantitative</b> axis and one <b>chronological</b> axis.</p>
+						</small>
+						<div class="fragment fade-in" style="display: flex;">
+							<img style="margin: 20px;" data-src="img/range_eg_bar.jpeg">
+							<img style="margin: 20px;" data-src="img/range_eg_points.jpeg">
+						</div>
+
+					</section>
+
+					<section>
+						<p> How to effectively viualize ranges on mobile phones? </p>
+						<div class="fragment fade-in">
+							<small>
+								<p> Crowdsourced experiment conducted with 87 crowd workers (MTurk) </p>
+								<p> Available online: https://aka.ms/ranges (Only viewable in mobile browsers and in portrait mode). </p>
+							</small>
+						</div>
+					</section>
+				</section>
+
+				<section>
+					<h5> 4 Factors in this Experiment </h5>
+
+					<p class="fragment fade-in"> Data Sources </p>
+					<p class="fragment fade-in"> Layout </p>
+					<p class="fragment fade-in"> Granularity </p>
+					<p class="fragment fade-in"> Task </p>
+				</section>
+
+				<section>
+					<h6> Data Sources </h6>
+
+					<section>
+						<small>
+							<p class="fragment fade-in"> Representation of data generally consumed on phone. </p>
+							<p class="fragment fade-in" style="font-style: italic;"><b> Weather app: </b>A city’s daily high and low temperature.</p>
+							<p class="fragment fade-in" style="font-style: italic;"><b> Sleep tracking app: </b>A person’s sleep schedule of bedtimes and waking times.</p>
+							<p class="fragment fade-in">For both data source, try to compare <u>observed values</u> with <u>average values</u>.</p>
+						</small>
+					</section>
+
+					<section>
+						<p> Temperature Range Data </p>
+
+						<small>
+							<ul>
+								<li class="fragment fade-in" style="margin: 10px 0"><b>Observed Ranges:</b> <br> Seattle’s daily temperature of 2015 https://www.wunderground.com/</li>
+								<li class="fragment fade-in" style="margin: 10px 0"><b>Average Ranges:</b> <br> Same day data from https://www.wunderground.com/intellicast</li>
+							</ul>
+						</small>
+					</section>
+
+					<section>
+						<p> Sleep Duration Range Data </p>
+
+						<small>
+							<ul>
+								<li class="fragment fade-in" style="margin: 10px 0">Semi-synthetic data.</li>
+								<li class="fragment fade-in" style="margin: 10px 0"><b>Observed Ranges:</b> <br> Posted on Reddit (/r/datasets): https://redd.it/1c1sah <br> Preprocess to fit the experiment.</li>
+								<li class="fragment fade-in" style="margin: 10px 0"><b>Average Ranges:</b> <br> Based on medical recommendation of 8 hrs sleep each night.</li>
+							</ul>
+						</small>
+					</section>
+
+					<!--section>
+						<p> Temperature Range vs Sleep Duration Range</p>
+
+						<small>
+							<li class="fragment fade-in" style="margin: 10px 0">
+								Temperature ranges exhibit seasonal variation over the course of a year.
+								<br>
+								Sleep duration exhibit more periodic pattern with variation occurring between weekdays and weekends.
+							</li>
+
+							<li class="fragment fade-in" style="margin: 10px 0">
+								Average temperature ranges fluctuate seasonally.
+								<br>
+								Average sleep range is consistent throughout the year.
+							</li>
+
+							<li class="fragment fade-in" style="margin: 10px 0">
+								Temperature range domain varies considerably across weeks, months and years.
+								(Domain of 1 week Jan is much smaller than domain across an entire year.)
+								<br>
+								Sleep range domain has upper bound of 24 hours
+							</li>
+
+						</small>
+					</section-->
+				</section>
+
+
+				<section>
+					<h6> Layout </h6>
+					<section>
+						<div class="fragment fade-in" style="margin-top: 32px;">
+							<small>
+								<p><b>Linear</b></p>
+								<p style="font-size: 70%;">Balanced quantitative and scale resolution.</p>
+								<img data-src="img/five-thirty-eight.webp" width="256px">
+							</small>
+						</div>
+						<div class="fragment fade-in">
+							<small>
+								<p><b>Radial</b></p>
+								<p style="font-size: 70%;">That emphasizes the cyclicality of time and may prioritize discrimination between values at periphery.</p>
+								<img data-src="img/weather-radials.png" width="256px">
+							</small>
+						</div>
+
+					</section>
+					<section>
+						<p> Linear Layout </p>
+						<div>
+							<small>
+								<img data-src="img/linear_eg1.jpeg" width="256px">
+								<p>
+									Quantiative scale orthogonal to chronological scale.
+								</p>
+								<p>
+									<b>Temperature data: </b> Cooler temperatures are lower.
+									<br>
+									<b>Sleep data: </b> Bedtimes are higher.
+								</p>
+							</small>
+						</div>
+					</section>
+
+					<section>
+						<p> Radial Layout </p>
+						<div>
+							<small>
+								<img data-src="img/radial_eg1.jpeg" width="256px">
+								<p>
+									Chronological scale is circumferential and quantitative scale emanates from lower values in the center to higher values at the periphery.
+								</p>
+							</small>
+						</div>
+					</section>
+
+					<section>
+						<p> Tradeoffs </p>
+						<div>
+							<small>
+								<p> <b> Radial Layout's Potential Advantage: </b> </p>
+								<p style="margin: 0;"> Emphasizes visual continuity reinforcing cycles. </p>
+								<p style="margin: 0;"> A year's seasonal temperature cycles or weekday/weekend sleep routines. </p>
+
+								<p style="margin-top: 48px;"> <b> Radial Layout's Potential Disadvantage: </b> </p>
+								<p style="margin: 0;"> May suggest continuity where non exists. </p>
+								<p style="margin: 0;"> Beginning and end of a single month. </p>
+							</small>
+						</div>
+					</section>
+
+					<section>
+						<p> Tradeoffs </p>
+						<div>
+							<small>
+								<p> <b> Radial Layout: </b> </p>
+								<p style="margin: 0;"> Quantitative scale is compressed to half of the chart width. </p>
+								<p style="margin: 0;"> Chronological scale is extended at the periphery. </p>
+
+								<p style="margin-top: 48px;"> <b> Square charts of 750px x 750px and 12.5% margin: </b> </p>
+								<p style="margin: 0;"> <b>Linear: </b>Quantitative: 562px; chronological: 562px. </p>
+								<p style="margin: 0;"> <b>Radial: </b>Quantitaive: half; chronological: 1766px. </p>
+							</small>
+						</div>
+					</section>
+				</section>
+
+				<section>
+					<h6> Granularity </h6>
+
+					<section>
+						<div>
+							<small>
+								<p class="fragment fade-in">
+									Existing weather and sleep-tracking apps vary in ranges shown in a chart:
+									<br>
+									7 days to a month
+								</p>
+								<p class="fragment fade-in"> Upper limit regarding mobile phones? </p>
+							</small>
+						</div>
+					</section>
+
+					<section>
+						<p> Experiment with 3 levels of granularity </p>
+						<img data-src="img/linear_eg2.jpeg">
+					</section>
+
+					<section>
+						<p> Experiment with 3 levels of granularity </p>
+						<img data-src="img/radial_eg2.jpeg">
+					</section>
+				</section>
+
+				<section>
+					<h6> Five tasks </h6>
+					<section>
+						<div>
+							<small>
+								<p class="fragment fade-in"> Locate Date </p>
+								<p class="fragment fade-in"> Read Value </p>
+								<p class="fragment fade-in"> Locate Min / Max </p>
+								<p class="fragment fade-in"> Compare Values </p>
+								<p class="fragment fade-in"> Compare Ranges </p>
+							</small>
+						</div>
+					</section>
+
+					<section>
+						<p> Locate Date </p>
+						<img data-src="img/locate_date.jpeg">
+					</section>
+
+					<section>
+						<p> Read Value </p>
+						<img data-src="img/read_value.jpeg">
+
+					</section>
+
+					<section>
+						<p> Locate Min / Max </p>
+						<img data-src="img/locate_min_max.jpeg">
+					</section>
+
+					<section>
+						<p> Compare Values </p>
+						<img data-src="img/compare_values.jpeg">
+					</section>
+
+					<section>
+						<p> Compare Ranges </p>
+						<img data-src="img/compare_ranges.jpeg">
+					</section>
+				</section>
+
+				<section>
+					<h6> Research Questions </h6>
+					<section>
+						<div>
+							<small>
+								<p class="fragment fade-in"> <b>Q1 / Layout: </b> How does layout affect performance? </p>
+								<p class="fragment fade-in"> <b>Q2 / Granularity: </b> How does temporal granularity affect performance? </p>
+								<p class="fragment fade-in"> <b>Q3a / Target Range Value: </b> Do participants benefit from increased scale resolution at the periphery of a radial layout? </p>
+								<p class="fragment fade-in"> <b>Q3b / Target Range Value: </b> Does performance degrade from smaller chronological resolution at the center? </p>
+							</small>
+						</div>
+					</section>
+					<section>
+						<div>
+							<small>
+								<p style="margin-top: 64px;">
+									<b>Metrics:</b>
+									<br>
+									Completion Time
+									<br>
+									Error Rate
+									<br>
+									Subjective Responses <br>(Preferred Layout, Confidence rating from 1 to 5)
+								</p>
+							</small>
+						</div>
+					</section>
+				</section>
+
+				<section>
+					<h6> Results </h6>
+
+					<section>
+						<p class="fragment fade-in"> <small>Three research questions of interest:</small> </p>
+						<p class="fragment fade-in"> Q1 / Layout </p>
+						<p class="fragment fade-in"> Q2 / Granularity </p>
+						<p class="fragment fade-in"> Q3 / Target Range Value </p>
+					</section>
+
+					<section>
+						<p> Mean Completion Time </p>
+						<img data-src="img/results1.jpeg">
+					</section>
+
+					<section>
+						<p> Error Rates </p>
+						<img data-src="img/results2.jpeg">
+					</section>
+
+					<section>
+						<p> Preference: Radial vs Linear </p>
+						<img data-src="img/results3.jpeg">
+					</section>
+
+					<section>
+						<p> Confidence: Radial vs Linear </p>
+						<img data-src="img/results4.jpeg">
+					</section>
+
+					<section>
+						<p> Radial / Linear Completion Time Ratios </p>
+						<img data-src="img/results5.jpeg">
+						<small class="fragment fade-in">
+							<b>Q1 / Layout: </b>
+							Slower with Radial layout in the first three tasks, especially Read Value.
+						</small>
+					</section>
+
+					<section>
+						<p> Radial / Linear Completion Time Ratios </p>
+						<img data-src="img/results6.jpeg">
+						<small class="fragment fade-in">
+							<b>Q1 / Layout: </b>
+							Similar response time in higher granularity.
+						</small>
+					</section>
+
+					<section>
+						<p> Radial - Linear Error Rate Differences </p>
+						<img data-src="img/results7.jpeg">
+						<div>
+							<small class="fragment fade-in">
+								<b>Q1 / Layout: </b>
+								Error rate varies. <br>
+								 Similar in temperature  <br>
+								 Less with Radial in Locate Date and high with Radial in Read Value and Locate Min/Max.
+							</small>
+						</div>
+					</section>
+
+					<section>
+						<p> Pairwise Completion Time Ratios </p>
+						<img data-src="img/results8.jpeg">
+						<small class="fragment fade-in">
+							<b>Q2 / Granularity: </b>
+							Slower response in higher granularity, except Y / M in Locate Date task.
+						</small>
+					</section>
+
+					<section>
+						<p> Pairwise Error Rate Differences </p>
+						<img data-src="img/results9.jpeg">
+						<small class="fragment fade-in">
+							<b>Q2 / Granularity: </b>
+							Higher error rate in higher granularity, except in the first 3 tasks, where increasing beyond Month did not increase error rate.
+						</small>
+					</section>
+
+					<section>
+						<p> Radial / Linear Completion Time Ratios </p>
+						<img data-src="img/results10.jpeg">
+						<small class="fragment fade-in">
+							<b>Q3 / Target Range Values: </b>
+							Slower with Radial layouts regardless of the target range, except for Compare Values.
+						</small>
+					</section>
+
+					<section>
+						<p> Radial - Linear Error Rate Differences </p>
+						<img data-src="img/results11.jpeg">
+						<small class="fragment fade-in">
+							<b>Q3 / Target Range Values: </b>
+							Sleep group: Error is more with Radial layouts in Locate Min/Max task as well as 1% to 10% more errors when reading Start values in Read Value task.
+						</small>
+					</section>
+				</section>
+
+				<section>
+					<h6> Implications </h6>
+					<p> Radial vs Linear Layout </p>
+
+					<section>
+						<div>
+							<small>
+								<p> Resurgent interests in Circular Layout, but prospect on mobile phones? </p>
+								<p> Participants <b><u>did not prefer</u></b> range charts with radial layout. </p>
+								<p> Subjective response reinforced by slower response. </p>
+							</small>
+						</div>
+					</section>
+
+					<section>
+						<div>
+							<small>
+								<div class="fragment fade-in" style="margin-top: 64px">
+									<p><u> Use case: compare observed range values against average range values. </u></p>
+									<p> Similar performance in both layouts. </p>
+								</div>
+								<div class="fragment fade-in" style="margin-top: 64px">
+									<p><u> Use case: locate min/max values reliably. </u></p>
+									<p> Radial layout not recommended. </p>
+								</div>
+
+								<div class="fragment fade-in" style="margin-top: 64px">
+									<p><u> Other use cases not tested in this research. </u></p>
+									<p> Radial layout may still be relevant </p>
+									<p> Identify trend from seasonal patterns over the course of several years. </p>
+								</div>
+							</small>
+						</div>
+					</section>
+				</section>
+
+
+
+				<section>
+					<h6> Implications </h6>
+					<p> How many ranges can you shown on a phone display? </p>
+
+					<section>
+						<div>
+							<small>
+								<p> Depends on the data source: </p>
+								<p>
+									<b> Temperature Ranges: </b>
+									<br> Year-ranges did not pose difficulty.
+									<br> In fact, sometimes worse performance with Month-ranges (Unconvectional?)
+								</p>
+
+								<p>
+									<b> Sleep Data Ranges: </b>
+									<br> Performance worsened as granularity increased.
+								</p>
+							</small>
+						</div>
+					</section>
+
+					<section>
+						<div>
+							<small>
+								<p> Depends on the type of task: </p>
+								<p>
+									<b> Compare different ranges: </b>
+									<br> High number of errors in a year of ranges.
+								</p>
+							</small>
+						</div>
+					</section>
+
+
+
+					<section>
+						<div>
+							<small>
+								<p> Alternative to showing full year of daily ranges: </p>
+								<p> <b>Aggregate into weekly or monthly ranges.</b> </p>
+							</small>
+						</div>
+					</section>
+				</section>
+
+				<section>
+					<h1> Thank you! </h1>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			Reveal.initialize({
+				hash: true,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/highlight/highlight.js' },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
